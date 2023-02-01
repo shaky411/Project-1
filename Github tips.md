@@ -30,3 +30,7 @@
 * The recent push will need to be merged on Github
 
 * Future pushes will now work with: git push
+
+
+
+These are just some of the commands that work for me, I would still tread carefully though, github is a whole world of pain.
