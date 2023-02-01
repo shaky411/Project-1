@@ -1,6 +1,6 @@
 ## GitHub Cheat Sheet 
 
-* Check branches locally - git branch
+* Check all branches available locally - git branch
 
 * Switch branch - git checkout {branch-name}
 
@@ -9,6 +9,8 @@
 * Create new branch: git branch <new-branch>
 
 * Pull from master branch -> git pull origin master
+
+* Change branch name, locally. Let say I want to change the name of branch marc to marc-new I would first makesure I am on the branch I want to change the run the following: git branch -m {new-branch-name-here}
 
 
 
