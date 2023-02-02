@@ -11,7 +11,7 @@
 }
 
 body {
-    background-color: gray !important;
+    font-family: 'poppins', sans-serif !important;
 }
 
 .navbar {
@@ -33,5 +33,26 @@ body {
 
 .jumbotron h1 {
     font-size: 100px;
-    
+}
+
+footer {
+    background-color: #00FFC2;
+    margin-top: 40px;
+}
+
+footer h6 {
+    padding: 10px;
+}
+
+.footer {
+    display: flex;
+    background-color: #5D5FEF;
+    margin-top: 40px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer h6 {
+    color: #fff;
 }
