@@ -1,5 +1,15 @@
-.card{
+.card-container {
     display: flex;
+    justify-content: space-around;
+}
 
+.card-img-top {
+    width: 100%;
+    aspect-ratio: 1;
+    background-size: contain;
 
+}
+
+body {
+    background-color: gray !important;
 }
