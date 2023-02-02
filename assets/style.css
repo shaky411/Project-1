@@ -13,3 +13,25 @@
 body {
     background-color: gray !important;
 }
+
+.navbar {
+    margin-bottom: 40px;
+}
+
+.jumbotron {
+    margin: 0rem !important;
+    background-color: #A5A6F6 !important;
+    color: #fff;
+    font-size: 300px;
+    text-align: center;
+    padding: 30px !important;
+}
+
+.navbar {
+    background-color: #00FFC2;
+}
+
+.jumbotron h1 {
+    font-size: 100px;
+    
+}
