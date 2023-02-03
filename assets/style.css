@@ -43,6 +43,12 @@ body {
 .navbar {
     margin-bottom: 40px;
     background-color: var(--navBar);
+    justify-content: center !important;
+    flex-direction: column-reverse;
+}
+
+.navbar a {
+    margin: 0px 40px 0px 40px;
 }
 
 .jumbotron h1 {
@@ -55,12 +61,9 @@ body {
 
 /* Footer */
 
-footer {
-    margin-top: 40px;
-}
 
-footer h6 {
-    padding: 10px;
+.footer i {
+    margin-left: 10px;
 }
 
 .footer {
