@@ -152,6 +152,10 @@ footer h6 {
     font-weight:lighter;
 }
 
+.modal-bottom i {
+    margin-left: 5px;
+}
+
 .modal-bottom h4 {
     margin-top: 20px;
 }
