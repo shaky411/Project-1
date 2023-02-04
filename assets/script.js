@@ -1,24 +1,69 @@
-// var SPOON_API="https://api.spoonacular.com/"
 
 // https://api.spoonacular.com/recipes/random
 
 // https://api.spoonacular.com/recipes/random?apiKey=ETCETC&number=10
+var SPOON_API="https://api.spoonacular.com/"
 
-// $.ajax({
-// url: SPOON_API + "recipes/random",
-// data: { 
-//     "apiKey": SPOON_API_KEY,
-//     "number": 10
-// },
-// url: 'assets/fake-api/random-recipies-10.json',
-// type: "GET",
-// success: function(body) {
-// console.log(body)
-//     },
-//     error: function(xhr) {
 
-//     }
-// });
+/*
+function callApi(method, params, callback) {
+    $.ajax({
+        url: "assets/fake-api/search-pizza.json",
+        data: params,
+        type: "GET",
+        success: function(body) {
+            console.log(body)
+            callback(body)
+        },
+            error: function(xhr) {
+    
+        }
+    });
+}
+*/
+
+function callApi(method, params, callback) {
+    params["apiKey"] = SPOON_API_KEY
+
+    $.ajax({
+        url: SPOON_API + method,
+        data: params,
+        type: "GET",
+        success: function(body) {
+            // var json = $.parseJSON(body);
+            console.log(body)
+            callback(body)
+        },
+        error: function(xhr) {
+            
+        }
+    });
+}
+
+let searchForm = $('#search')
+let searchBox = $('#searchbox') // document.getElementById('searchbox')
+let searchButton = $('#searchsubmit')
+
+
+searchForm.submit(function(e) {
+    // Prevent default action of HTML form
+    e.preventDefault();
+
+    let searchQuery = searchBox.value
+    if (searchQuery == "") {
+        searchBox.attr("placeholder", "Search is empty!")
+        return
+    }
+    
+    callApi("recipes/complexSearch", {
+        query: searchQuery
+    }, function(response) {
+        console.log(response)
+    })
+    
+    // Prevent default form action
+    return false
+})
 
 /*
 $.get(SPOON_API + "recipes/random", function(data, status){
@@ -51,7 +96,7 @@ $.get(SPOON_API + "recipes/random", function(data, status){
 
 
 
-
+/*
 
 let cardOneTitle = document.querySelector('.card-title-one');
 
@@ -108,3 +153,4 @@ function getApi() {
 };
 
 getApi();
+*/
