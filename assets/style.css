@@ -61,9 +61,14 @@ body {
 
 /* Footer */
 
-
+.a {
+    text-decoration: none;
+    color: var(--a);
+    
+}
 .footer i {
-    margin-left: 10px;
+       color: white !important;
+    margin-left: 0px;
 }
 
 .footer {
@@ -73,7 +78,7 @@ body {
     padding: 20px;
     justify-content: center;
     align-items: center;
-    font-size: ;
+    font-size: 0px;
 }
 
 .footer h6 {
