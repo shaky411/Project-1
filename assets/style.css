@@ -184,11 +184,6 @@ body {
 
 /* Modal Body */
 
-.modal-top {
-    /* display: flex; */
-    /* text-align: center; */
-}
-
 .modal-top img {
     border-radius: 15px;
     width: 450px;
@@ -217,6 +212,21 @@ body {
     margin-top: 10px;
     font-weight: lighter;
 }
+
+/* media query below */
+
+
+/* @media (max-width: 480px)  */
+/* { for small mobile devices } */
+
+/* @media (min-width: 768px) and (max-width: 1024px)  */
+/* { for portrait tablets } */
+
+/* @media (min-width: 1024px) and (max-width: 1280px)  */
+/* { for landscape tablets } */
+
+/* @media (min-width: 1440px)  */
+/* { for large desktops } */
 
 
 
