@@ -1,0 +1,6 @@
+.gitignore
+# remove .gitignore after sorting variables/secrets solution
+
+notes.txt
+
+assets/variables.js
