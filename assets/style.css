@@ -108,9 +108,16 @@ body {
 }
 
 .footer i {
-       color: white !important;
-    margin-left: 0px;
+    transition: all 0.3s ease;
+    color: white !important;
+    margin-left: 5px;
 }
+
+.footer a:link { text-decoration: none; }
+
+.footer i:hover {
+    transform: scale(1.1);
+} 
 
 .footer {
     display: flex;
@@ -124,9 +131,6 @@ body {
 .footer h6 {
     color: #fff;
 }
-
-
-
 /* Modal */
 
 .modal-header {
