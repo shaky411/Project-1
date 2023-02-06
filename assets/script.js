@@ -176,7 +176,7 @@ $.get(SPOON_API + "recipes/random", function(data, status){
 //             let results = response;
 
 //             // stores results in local storage
-//             localStorage.setItem('results', JSON.stringify(results));
+// localStorage.setItem('results', JSON.stringify(results));
 
 //             // gets results from local storage and prints to the console
 //             // console.log(localStorage.getItem('results'));
@@ -245,6 +245,8 @@ $.get(SPOON_API + "recipes/random", function(data, status){
 // THIS CODE IS FOR THE LIKE/DISLIKE EMOJI
 
 let likeBtn = document.querySelector("#like-counter");
+let clearLikeBtn = document.querySelector("#clear-buttons");
+let clearDislikeBtn = document.querySelector("#clear-buttons");
 let dislikeBtn = document.querySelector('#dislike-counter');
 
 function likeDislike() {
@@ -252,40 +254,61 @@ function likeDislike() {
     let emojiContainer = document.getElementById('emojiContainer');
 
     fetch("https://emoji-api.com/emojis?access_key=5715a029ed3fd2e22383b01663524c9319a127f7")
-            .then(response => response.json())
-            .then(function (response) {
-                let emojis = response;
+        .then(response => response.json())
+        .then(function (response) {
+            let emojis = response;
+            // console.log(emojis)
+            let thumbsDownEmoji = (response[186].character)
+            let heartEmoji = (response[185].character)
+            
 
-                console.log(emojis)
+            console.log(thumbsDownEmoji)
+            console.log(heartEmoji)
 
-                let thumbsDownEmoji = (response[186].character)
-                let heartEmoji = (response[185].character)
-
-                console.log(thumbsDownEmoji)
-                console.log(heartEmoji)
-
-
-    likeBtn.addEventListener('click', function () {
+            likeBtn.addEventListener('click', function () {
 
                 let likeEmoji = document.createElement('h4');
-                likeEmoji.innerHTML = `${heartEmoji}`
+                likeEmoji.setAttribute('id','para-1');
 
+                likeEmoji.innerHTML = `${heartEmoji}`
                 emojiContainer.append(likeEmoji);
                 dislikeBtn.disabled = true
+                likeBtn.disabled = true
+
+                clearLikeBtn.addEventListener('click', function() {
+
+                    likeBtn.disabled = false
+                    dislikeBtn.disabled = false
+                    likeEmoji.remove();
+    
+                })
 
             });
 
             dislikeBtn.addEventListener('click', function () {
-                
-                let dislikeEmoji = document.createElement('h4');
-                dislikeEmoji.innerHTML = `${thumbsDownEmoji}`
 
+                let dislikeEmoji = document.createElement('h4');
+                dislikeEmoji.setAttribute('id','para-2');
+
+                dislikeEmoji.innerHTML = `${thumbsDownEmoji}`
                 emojiContainer.append(dislikeEmoji);
                 likeBtn.disabled = true
-                
+                dislikeBtn.disabled = true
 
+                clearDislikeBtn.addEventListener('click', function() {
+
+                    likeBtn.disabled = false
+                    dislikeBtn.disabled = false
+                    dislikeEmoji.remove();
+    
+                })
             });
-    });
+
+        });
+
+        
+        
+        
 
     // if (likeClicks = 1) {
     //     dislikeBtn.disabled = true;
@@ -295,7 +318,6 @@ function likeDislike() {
 
 
 likeDislike();
-getEmoji();
 
 
 
