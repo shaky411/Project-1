@@ -2,7 +2,7 @@
 // https://api.spoonacular.com/recipes/random
 
 // https://api.spoonacular.com/recipes/random?apiKey=ETCETC&number=10
-var SPOON_API="https://api.spoonacular.com/"
+var SPOON_API = "https://api.spoonacular.com/"
 
 /*
 function callApi(method, params, callback) {
@@ -30,13 +30,13 @@ function callApi(method, params, callback) {
         url: SPOON_API + method,
         data: params,
         type: "GET",
-        success: function(body) {
+        success: function (body) {
             // var json = $.parseJSON(body);
             console.log(body)
             callback(body)
         },
-        error: function(xhr) {
-            
+        error: function (xhr) {
+
         }
     });
 }
@@ -66,7 +66,7 @@ searchForm.submit(function(e) {
     return false
 })*/
 
-searchForm.submit(function(e) {
+searchForm.submit(function (e) {
     // Prevent default action of HTML form
     e.preventDefault();
 
@@ -77,7 +77,7 @@ searchForm.submit(function(e) {
         searchBox.attr("placeholder", "Search is empty!")
         return
     }
-    
+
     let numberOfRecipes = 10
 
     // create HTML string containing the components of the carousel/slider
@@ -85,7 +85,7 @@ searchForm.submit(function(e) {
     callApi("recipes/complexSearch", {
         query: searchQuery
         // numberOfRecipes incl here
-    }, function(response) {
+    }, function (response) {
         let recipes = response.results;
         console.log(recipes)
 
@@ -105,10 +105,10 @@ searchForm.submit(function(e) {
 
             // todo: change this to use promises instead
             // todo: change this 'response' variable so as not to clash with the above, although the items we need have been manually assigned (shorthand variables)
-            callApi("recipes/" + id + "/information", {}, function(response) {
+            callApi("recipes/" + id + "/information", {}, function (response) {
                 // this summary contains a HTML summary of the recipe
                 let summary = response.summary
-                
+
                 // not necessary
                 // returnedData.push(response)
                 html += `<li tabindex="-1" style="">
@@ -138,9 +138,9 @@ searchForm.submit(function(e) {
                 }
             })
         }
-        
+
     })
-    
+
     // Prevent default form action
     return false
 })
@@ -163,25 +163,9 @@ $.get(SPOON_API + "recipes/random", function(data, status){
 
 
 
-
-
-// fetch(“https://emoji-api.com/emojis?access_key=5715a029ed3fd2e22383b01663524c9319a127f7")
-// .then(response => response.json())
-// .then(data => console.log(data[185].character));
-
-// let imageContainer = document.querySelector("#image-container")
-// let imageNewContainer = document.querySelector("#imageNew-container")
-
-
-
-
-
 // let cardOneTitle = document.querySelector('.card-title-one');
 
-
-
 // let queryURL = "https://api.spoonacular.com/recipes/complexSearch?apiKey=9576a7ab42504001b624812b6543e457"
-
 
 
 // function getApi() {
@@ -223,15 +207,115 @@ $.get(SPOON_API + "recipes/random", function(data, status){
 // getApi();
 
 
-// function likeCounter() {
-//     // This will be a counter to increment the like dislike buttons
 
-//     // need to add event listeners to the buttons
+// Like/Dislike click counter
+// still todo:
+// prevent more than 1 click
+// if like clicked, disable dislike and vice versa
+// save to local storage
+// connect emoji api
+
+
+// if(!already) {
+//     document.getElementById("num").innerHTML = x+=1;
+//     already = true;
 // }
 
+// function cnt () {
+//     if (!JSON.parse(localStorage.getItem('hasClicked'))) {
+//         document.getElementById("num").innerHTML = x+=1;
+//         localStorage.setItem('hasClicked', true);
+//     }
+//  }
+
+// <div id="counter">
+//     <h2> support counter </h2>
+//     <div onclick="cnt()">
+//          <span id="num">Click here to show support</span>
+//     </div>
+// </div>
+
+// let likeClicks = 0;
+// let dislikeClicks = 0;
+// let likeClicked = false
+// let dislikeClicked = false;
 
 
 
+// THIS CODE IS FOR THE LIKE/DISLIKE EMOJI
+
+let likeBtn = document.querySelector("#like-counter");
+let dislikeBtn = document.querySelector('#dislike-counter');
+
+function likeDislike() {
+
+    let emojiContainer = document.getElementById('emojiContainer');
+
+    fetch("https://emoji-api.com/emojis?access_key=5715a029ed3fd2e22383b01663524c9319a127f7")
+            .then(response => response.json())
+            .then(function (response) {
+                let emojis = response;
+
+                console.log(emojis)
+
+                let thumbsDownEmoji = (response[186].character)
+                let heartEmoji = (response[185].character)
+
+                console.log(thumbsDownEmoji)
+                console.log(heartEmoji)
+
+
+    likeBtn.addEventListener('click', function () {
+
+                let likeEmoji = document.createElement('h4');
+                likeEmoji.innerHTML = `${heartEmoji}`
+
+                emojiContainer.append(likeEmoji);
+                dislikeBtn.disabled = true
+
+            });
+
+            dislikeBtn.addEventListener('click', function () {
+                
+                let dislikeEmoji = document.createElement('h4');
+                dislikeEmoji.innerHTML = `${thumbsDownEmoji}`
+
+                emojiContainer.append(dislikeEmoji);
+                likeBtn.disabled = true
+                
+
+            });
+    });
+
+    // if (likeClicks = 1) {
+    //     dislikeBtn.disabled = true;
+    // }
+
+};
+
+
+likeDislike();
+getEmoji();
+
+
+
+
+
+
+
+
+
+
+// likeBtn.addEventListener('click', function() {
+//     likeClicks += 1;
+//     document.getElementById('likes').innerHTML = likeClicks;
+//     // likeBtn.disabled = true;
+// });
+
+// dislikeBtn.addEventListener('click', function() {
+//     dislikeClicks += 1;
+//     document.getElementById('dislikes').innerHTML = dislikeClicks;
+// });
 
 
 
@@ -271,5 +355,3 @@ $.get(SPOON_API + "recipes/random", function(data, status){
 
     // imageContainer.append(newDiv);
     // imageNewContainer.append(anotherDiv);
-
-

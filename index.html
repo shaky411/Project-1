@@ -464,40 +464,58 @@
   </div>
 
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title" id="exampleModalLongTitle"></h3>
-          <i class="fa-solid fa-heart"></i>
-          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
-          <!-- <span aria-hidden="true">&times;</span> -->
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="modal-top">
-            <img
-              src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              class="card-img-top modal-image" alt="...">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header" id="modal-header">
+                    <h3 class="modal-title" id="exampleModalLongTitle">Nice Food</h3>
+                    <div id="emojiContainer" class="emoji-container">
+                      <!-- Emoji from API goes here -->
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-top">
+                        <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            class="card-img-top modal-image" alt="...">
 
-          </div>
-          <div class="modal-bottom">
-            <h4 class="recipe">
-              Recipe
-            </h4>
-            <p class="recipe-text">
-              Learn a skill for life with our foolproof easy crêpe recipe that ensures perfect pancakes
-              every time.
-            </p>
-            <h5>Ingredients</h5>
-            <ul class="ingredients">
-
-            </ul>
-            <a href="http://fullbellysisters.blogspot.com/2012/06/pasta-with-garlic-scallions-cauliflower.html"
-              target="_blank">read more<i class="fa-solid fa-angle-right"></i></a>
-          </div>
+                    </div>
+                    <div class="modal-bottom">
+                        <h4 class="recipe">
+                            Recipe
+                        </h4>
+                        <p class="recipe-text">
+                            Learn a skill for life with our foolproof easy crêpe recipe that ensures perfect pancakes
+                            every time.
+                        </p>
+                        <h5>Ingredients</h5>
+                        <ul class="ingredients">
+                          <li>12 sausages</li>
+                          <li>2 tbsp olive oil
+                          </li>
+                          <li>2 onions, chopped
+                          </li>
+                          <li>4 garlic cloves, crushed</li>
+                          <li>2 tsp fennel seeds</li>
+                          <li>½ tsp chilli flakes (optional)</li>
+                        </ul>
+                        <a href="http://fullbellysisters.blogspot.com/2012/06/pasta-with-garlic-scallions-cauliflower.html"
+                            target="_blank">read more<i class="fa-solid fa-angle-right"></i></a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="like-dislike">
+                        <!-- Like counter will increment by 1 and only allow 1 click per uesr -->
+                        <button id="like-counter" type="button" class="btn btn-success"><i
+                                class="fa-solid fa-thumbs-up"></i>Like</button>
+                        <!-- Dislike counter will increment by 1 and only allow 1 click per uesr -->
+                        <button id="dislike-counter" type="button" class="btn btn-danger"><i
+                                class="fa-solid fa-thumbs-down"></i>Dislike</button>
+                    </div>
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
         <div class="modal-footer">
           <div class="like-dislike">
@@ -514,12 +532,16 @@
     </div>
   </div>
 
-
   <div class="footer">
     <h6>TEAM-19 &copy 2023<a href="https://github.com/shaky411/Project-1" target="_blank">
         <i class="fa fa-brands fa-github"></i>
-
-
+    <div class="footer">
+        <h6>TEAM-19 &copy 2023<a style="text-decoration: none;" href="https://github.com/shaky411/Project-1" target="_blank">
+            <i class="fa fa-brands fa-github"></i>
+          </a>
+            
+          </a>
+    </div>
 
   </div>
 
