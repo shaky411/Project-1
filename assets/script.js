@@ -259,7 +259,7 @@ function likeDislike() {
                 console.log(emojis)
 
                 let thumbsDownEmoji = (response[186].character)
-                let heartEmoji = (response[128].character)
+                let heartEmoji = (response[185].character)
 
                 console.log(thumbsDownEmoji)
                 console.log(heartEmoji)
