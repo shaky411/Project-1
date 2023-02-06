@@ -223,13 +223,70 @@ $.get(SPOON_API + "recipes/random", function(data, status){
 // getApi();
 
 
-// function likeCounter() {
-//     // This will be a counter to increment the like dislike buttons
 
-//     // need to add event listeners to the buttons
+
+
+
+// Like/Dislike click counter
+// still todo:
+// prevent more than 1 click
+// if like clicked, disable dislike and vice versa
+// save to local storage
+// connect emoji api
+
+
+// if(!already) {
+//     document.getElementById("num").innerHTML = x+=1;
+//     already = true;
 // }
 
+// function cnt () {
+//     if (!JSON.parse(localStorage.getItem('hasClicked'))) {
+//         document.getElementById("num").innerHTML = x+=1;
+//         localStorage.setItem('hasClicked', true);
+//     }
+//  }
 
+// <div id="counter">
+//     <h2> support counter </h2>
+//     <div onclick="cnt()">
+//          <span id="num">Click here to show support</span>
+//     </div>
+// </div>
+
+
+let likeClicks = 0;
+let dislikeClicks = 0;
+let likeClicked = false
+let dislikeClicked = false;
+
+let likeBtn = document.querySelector("#like-counter");
+let dislikeBtn = document.querySelector('#dislike-counter');
+
+
+function likeDislike() {
+
+    likeBtn.addEventListener('click', function() {
+        likeClicks += 1;
+        document.getElementById('likes').innerHTML = likeClicks;
+        // likeBtn.disabled = true;
+    });
+
+   
+    
+    dislikeBtn.addEventListener('click', function() {
+        dislikeClicks += 1;
+        document.getElementById('dislikes').innerHTML = dislikeClicks;
+    });
+
+    if (likeClicks = 1) {
+        dislikeBtn.disabled = true;
+    }
+
+};
+
+
+likeDislike();
 
 
 
