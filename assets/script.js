@@ -271,6 +271,7 @@ function likeDislike() {
                 likeEmoji.innerHTML = `${heartEmoji}`
 
                 emojiContainer.append(likeEmoji);
+                dislikeBtn.disabled = true
 
             });
 
@@ -280,6 +281,8 @@ function likeDislike() {
                 dislikeEmoji.innerHTML = `${thumbsDownEmoji}`
 
                 emojiContainer.append(dislikeEmoji);
+                likeBtn.disabled = true
+                
 
             });
     });
