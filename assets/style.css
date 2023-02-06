@@ -176,6 +176,17 @@ body {
 
 .btn-light {
     box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.4);
+    margin-left: 5px;
+}
+
+#clear-buttons i {
+    font-size: 20px;
+    padding: 0px !important;
+    color: #A0A7B7;
+}
+
+#clear-buttons:hover i {
+    color: black;
 }
 
 /* Modal Body */
