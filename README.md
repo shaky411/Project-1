@@ -15,6 +15,16 @@
     * Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
     * Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
+**Technologies Used**
+
+* We have used the following technologies to create our app:
+
+    * CSS
+    • Tailwind CSS
+    * JQuery
+    * Javascript
+    * Spoonacular API: https://spoonacular.com/food-api
+
 ## Installation
 
 To run the application, simply open the following link in your chosen web braowser.
