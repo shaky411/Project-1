@@ -88,6 +88,15 @@ img.rounded-corners {
     flex-direction: column-reverse;
 }
 
+::placeholder {
+    opacity: 0.5 !important;
+}
+
+#searchbox {
+    width: 280px;
+    margin-right: 5px;
+}
+
 .navbar a {
     margin: 0px 40px 0px 40px;
 }
