@@ -306,14 +306,6 @@ function likeDislike() {
 
         });
 
-        
-        
-        
-
-    // if (likeClicks = 1) {
-    //     dislikeBtn.disabled = true;
-    // }
-
 };
 
 
