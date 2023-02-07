@@ -507,16 +507,16 @@
         </div>
 
         <div class="modal-footer">
-          <div class="like-dislike">
+          <div class="like-dislike left-buttons">
             <!-- Like counter will increment by 1 and only allow 1 click per uesr -->
             <button id="like-counter" type="button" class="btn btn-success"><i
                 class="fa-solid fa-thumbs-up"></i>Like</button>
             <!-- Dislike counter will increment by 1 and only allow 1 click per uesr -->
             <button id="dislike-counter" type="button" class="btn btn-danger"><i
                 class="fa-solid fa-thumbs-down"></i>Dislike</button>
-            <button id="clear-buttons" class="btn btn-light"><i class="fa-regular fa-circle-xmark"></i></button>
+            <a><i id="clear-buttons" class="fa-regular fa-circle-xmark"></i></a>
           </div>
-          <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+          <button type="button" id="clear-button" class="btn btn-light" data-dismiss="modal">Close</button>
         </div>
 
       </div>
