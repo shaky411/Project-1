@@ -3,6 +3,9 @@
 
 // https://api.spoonacular.com/recipes/random?apiKey=ETCETC&number=10
 var SPOON_API = "https://api.spoonacular.com/"
+let SPOON_API_KEY = "9576a7ab42504001b624812b6543e457"
+
+"https://api.spoonacular.com/recipes/complexSearch?query=pasta&maxFat=25&number=2"
 
 /*
 function callApi(method, params, callback) {
@@ -107,7 +110,8 @@ searchForm.submit(function (e) {
             // todo: change this 'response' variable so as not to clash with the above, although the items we need have been manually assigned (shorthand variables)
             callApi("recipes/" + id + "/information", {}, function (response) {
                 // this summary contains a HTML summary of the recipe
-                let summary = response.summary
+                let summary = response.instructions
+                console.log(response.instructions);
 
                 // not necessary
                 // returnedData.push(response)
@@ -118,11 +122,11 @@ searchForm.submit(function (e) {
                             </div>
                             <div class="uk-card-body">
                                 <h3 class="uk-card-title-${i}">${title}</h3>
-                                ${summary}
+                                
                                 <!-- This button launches the modal -->
                                 <div class="recipe-button" id="recipe-button-${i}">
                                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalLong">
-                                    Recipe
+                                Recipes
                                 </button>
                                 </div>
                             </div>
@@ -243,6 +247,11 @@ $.get(SPOON_API + "recipes/random", function(data, status){
 
 
 // THIS CODE IS FOR THE LIKE/DISLIKE EMOJI
+let modals = modal[i]
+
+for(let i = 0; i < modals.length; i++) {
+
+}
 
 let likeBtn = document.querySelector("#like-counter");
 let clearLikeBtn = document.querySelector("#clear-buttons");
@@ -260,27 +269,23 @@ function likeDislike() {
             // console.log(emojis)
             let thumbsDownEmoji = (response[186].character)
             let heartEmoji = (response[185].character)
-            
-
-            console.log(thumbsDownEmoji)
-            console.log(heartEmoji)
 
             likeBtn.addEventListener('click', function () {
 
                 let likeEmoji = document.createElement('h4');
-                likeEmoji.setAttribute('id','para-1');
+                likeEmoji.setAttribute('id', 'para-1');
 
                 likeEmoji.innerHTML = `${heartEmoji}`
                 emojiContainer.append(likeEmoji);
                 dislikeBtn.disabled = true
                 likeBtn.disabled = true
 
-                clearLikeBtn.addEventListener('click', function() {
+                clearLikeBtn.addEventListener('click', function () {
 
                     likeBtn.disabled = false
                     dislikeBtn.disabled = false
                     likeEmoji.remove();
-    
+
                 })
 
             });
@@ -288,19 +293,19 @@ function likeDislike() {
             dislikeBtn.addEventListener('click', function () {
 
                 let dislikeEmoji = document.createElement('h4');
-                dislikeEmoji.setAttribute('id','para-2');
+                dislikeEmoji.setAttribute('id', 'para-2');
 
                 dislikeEmoji.innerHTML = `${thumbsDownEmoji}`
                 emojiContainer.append(dislikeEmoji);
                 likeBtn.disabled = true
                 dislikeBtn.disabled = true
 
-                clearDislikeBtn.addEventListener('click', function() {
+                clearDislikeBtn.addEventListener('click', function () {
 
                     likeBtn.disabled = false
                     dislikeBtn.disabled = false
                     dislikeEmoji.remove();
-    
+
                 })
             });
 
@@ -315,7 +320,14 @@ likeDislike();
 
 
 
+// localStorage.setItem(likeEmoji.innerHTML, JSON.stringify())
 
+
+                // window.localStorage.setItem("likeEmoji", likeEmoji.innerHTML);
+
+                // window.addEventListener('DOMContentLoaded', e => {
+                //     localStorage.getItem(likeEmoji);
+                // })
 
 
 
