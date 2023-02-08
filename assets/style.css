@@ -276,6 +276,14 @@ img.rounded-corners {
     border-radius: 5px;
 }
 
+.uk-button {
+    background-color: #002553;
+    width: 150px;
+    color: #fff;
+    align-items: center;
+    text-align: center;
+}
+
 /* media query below */
 
 
