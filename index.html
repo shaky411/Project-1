@@ -87,13 +87,45 @@
                             <h3 class="uk-card-title=1">Recipe name</h3>
                         </div>
                         <!-- This button launches the modal -->
-                        <div class="recipe-button" id="recipe-button-1">
-                            <button type="button" class="btn btn-info" data-toggle="modal"
-                                data-target="#modal1">
-                                Recipe
-                            </button>
+                        <a class="uk-button uk-button-default" href="#modal-overflow" uk-toggle>Recipe</a>
+                    </div>
+
+
+
+                    <div id="modal-overflow" uk-modal>
+                        <div class="uk-modal-dialog">
+
+                            <button class="uk-modal-close-default" type="button" uk-close></button>
+
+                            <div class="uk-modal-header">
+                                <h2 class="uk-modal-title">Headline</h2>
+                            </div>
+
+                            <div class="uk-modal-body" uk-overflow-auto>
+
+                                <img src="" alt="">
+
+                                <p></p>
+
+                            </div>
+
+                            <div class="uk-modal-footer uk-text-right">
+                                <div class="uk-modal-buttons">
+                                    <div class="like-buttons">
+                                        <button class="like">Like</button>
+                                        <button class="dislike">Dislike</button>
+                                    </div>
+                                    <button class="uk-button uk-button-default uk-modal-close"
+                                        type="button">Close</button>
+                                </div>
+
+
+                            </div>
+
                         </div>
                     </div>
+
+
                 </li>
                 <!-- Second slide -->
                 <li>
@@ -106,8 +138,7 @@
                             <h3 class="uk-card-title-2">Recipe name</h3>
                             <!-- This button launches the modal -->
                             <div class="recipe-button" id="recipe-button-2">
-                                <button type="button" class="btn btn-info" data-toggle="modal"
-                                    data-target="#modal1">
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal1">
                                     Recipe
                                 </button>
                             </div>
@@ -125,8 +156,7 @@
                             <h3 class="uk-card-title-3">Recipe name</h3>
                             <!-- This button launches the modal -->
                             <div class="recipe-button" id="recipe-button-3">
-                                <button type="button" class="btn btn-info" data-toggle="modal"
-                                    data-target="#modal1">
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal1">
                                     Recipe
                                 </button>
                             </div>
@@ -144,8 +174,7 @@
                             <h3 class="uk-card-title-4">Recipe name</h3>
                             <!-- This button launches the modal -->
                             <div class="recipe-button" id="recipe-button-4">
-                                <button type="button" class="btn btn-info" data-toggle="modal"
-                                    data-target="#modal1">
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal1">
                                     Recipe
                                 </button>
                             </div>
@@ -163,8 +192,7 @@
                             <h3 class="uk-card-title-5">Recipe name</h3>
                             <!-- This button launches the modal -->
                             <div class="recipe-button" id="recipe-button-5">
-                                <button type="button" class="btn btn-info" data-toggle="modal"
-                                    data-target="#modal1">
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal1">
                                     Recipe
                                 </button>
                             </div>
@@ -182,8 +210,7 @@
                             <h3 class="uk-card-title-6">Recipe name</h3>
                             <!-- This button launches the modal -->
                             <div class="recipe-button" id="recipe-button-6">
-                                <button type="button" class="btn btn-info" data-toggle="modal"
-                                    data-target="#modal1">
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal1">
                                     Recipe
                                 </button>
                             </div>
@@ -201,8 +228,7 @@
                             <h3 class="uk-card-title-7">Recipe name</h3>
                             <!-- This button launches the modal -->
                             <div class="recipe-button" id="recipe-button-7">
-                                <button type="button" class="btn btn-info" data-toggle="modal"
-                                    data-target="#modal1">
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal1">
                                     Recipe
                                 </button>
                             </div>
@@ -220,8 +246,7 @@
                             <h3 class="uk-card-title-8">Test Meal 2</h3>
                             <!-- This button launches the modal -->
                             <div class="recipe-button" id="recipe-button-8">
-                                <button type="button" class="btn btn-info" data-toggle="modal"
-                                    data-target="#modal1">
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal1">
                                     Recipe
                                 </button>
                             </div>
@@ -260,10 +285,8 @@
 
 
 
-    
-    <!-- Modals -->
 
-    <!-- Modal-1 -->
+    <!-- Modals -->
     <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
         aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
@@ -347,7 +370,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-    <script src="./assets/variables.js"></script>
+    <!-- <script src="./assets/variables.js"></script> -->
     <script src="./assets/script.js"></script>
 </body>
 

@@ -81,7 +81,7 @@ searchForm.submit(function (e) {
         return
     }
 
-    let numberOfRecipes = 1
+    let numberOfRecipes = 2
 
     // create HTML string containing the components of the carousel/slider
     let html = "";
@@ -104,6 +104,7 @@ searchForm.submit(function (e) {
             let title = recipe.title;
             let imageURL = recipe.image;
             let id = recipe.id
+            let instructions = response.instructions
 
             // https://api.spoonacular.com/recipes/
 
@@ -111,7 +112,7 @@ searchForm.submit(function (e) {
             // todo: change this 'response' variable so as not to clash with the above, although the items we need have been manually assigned (shorthand variables)
             callApi("recipes/" + id + "/information", {}, function (response) {
                 // this summary contains a HTML summary of the recipe
-                let instructions = response.instructions
+                
                 console.log(instructions);
 
                 // not necessary
@@ -119,20 +120,55 @@ searchForm.submit(function (e) {
                 html += `<li tabindex="-1" style="">
                             <div class="uk-card uk-card-default">
                             <div class="uk-card-media-top" id="recipe-image-${i}">
-                                <img src="${imageURL}" width="1800" height="1200" alt="${title}">
+                                <img src="${imageURL}" alt="${title}">
                             </div>
                             <div class="uk-card-body">
                                 <h3 class="uk-card-title-${i}">${title}</h3>
                                 
                                 <!-- This button launches the modal -->
                                 <div class="recipe-button" id="recipe-button-${i}">
-                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal1">
-                                Recipes
-                                </button>
+                                <a class="uk-button uk-button-default" href="#modal-overflow" uk-toggle>Recipe</a>
                                 </div>
                             </div>
                             </div>
-                        </li>`
+                        </li>
+                        
+                        <div id="modal-overflow" uk-modal>
+                        <div class="uk-modal-dialog">
+
+                            <button class="uk-modal-close-default" type="button" uk-close></button>
+
+                            <div class="uk-modal-header">
+                                <h2 class="uk-modal-title">${title}</h2>
+                            </div>
+
+                            <div class="uk-modal-body" uk-overflow-auto>
+
+                            <img src="${imageURL}" alt="${title}">
+
+                                <p>${instructions}</p>
+
+                            </div>
+
+                            <div class="uk-modal-footer uk-text-right">
+                                <div class="uk-modal-buttons">
+                                    <div class="like-buttons">
+                                        <button class="like">Like</button>
+                                        <button class="dislike">Dislike</button>
+                                    </div>
+                                    <button class="uk-button uk-button-default uk-modal-close"
+                                        type="button">Close</button>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                        
+                        
+                        `
                 console.log(id, instructions)
 
                 --numberOfRecipes;
