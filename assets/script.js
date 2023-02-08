@@ -81,12 +81,13 @@ searchForm.submit(function (e) {
         return
     }
 
-    let numberOfRecipes = 10
+    let numberOfRecipes = 1
 
     // create HTML string containing the components of the carousel/slider
     let html = "";
     callApi("recipes/complexSearch", {
-        query: searchQuery
+        query: searchQuery,
+        number: numberOfRecipes
         // numberOfRecipes incl here
     }, function (response) {
         let recipes = response.results;
@@ -110,8 +111,8 @@ searchForm.submit(function (e) {
             // todo: change this 'response' variable so as not to clash with the above, although the items we need have been manually assigned (shorthand variables)
             callApi("recipes/" + id + "/information", {}, function (response) {
                 // this summary contains a HTML summary of the recipe
-                let summary = response.instructions
-                console.log(response.instructions);
+                let instructions = response.instructions
+                console.log(instructions);
 
                 // not necessary
                 // returnedData.push(response)
@@ -125,14 +126,14 @@ searchForm.submit(function (e) {
                                 
                                 <!-- This button launches the modal -->
                                 <div class="recipe-button" id="recipe-button-${i}">
-                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalLong">
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal1">
                                 Recipes
                                 </button>
                                 </div>
                             </div>
                             </div>
                         </li>`
-                console.log(id, summary)
+                console.log(id, instructions)
 
                 --numberOfRecipes;
                 console.log(id, "Calls remaining", numberOfRecipes)
@@ -212,40 +213,6 @@ $.get(SPOON_API + "recipes/random", function(data, status){
 
 
 
-// Like/Dislike click counter
-// still todo:
-// prevent more than 1 click
-// if like clicked, disable dislike and vice versa
-// save to local storage
-// connect emoji api
-
-
-// if(!already) {
-//     document.getElementById("num").innerHTML = x+=1;
-//     already = true;
-// }
-
-// function cnt () {
-//     if (!JSON.parse(localStorage.getItem('hasClicked'))) {
-//         document.getElementById("num").innerHTML = x+=1;
-//         localStorage.setItem('hasClicked', true);
-//     }
-//  }
-
-// <div id="counter">
-//     <h2> support counter </h2>
-//     <div onclick="cnt()">
-//          <span id="num">Click here to show support</span>
-//     </div>
-// </div>
-
-// let likeClicks = 0;
-// let dislikeClicks = 0;
-// let likeClicked = false
-// let dislikeClicked = false;
-
-
-
 // THIS CODE IS FOR THE LIKE/DISLIKE EMOJI
 // let modals = modal[i]
 
@@ -313,7 +280,6 @@ function likeDislike() {
 
 };
 
-
 likeDislike();
 
 
@@ -342,21 +308,6 @@ likeDislike();
 //     dislikeClicks += 1;
 //     document.getElementById('dislikes').innerHTML = dislikeClicks;
 // });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
