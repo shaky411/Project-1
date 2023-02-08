@@ -256,6 +256,26 @@ img.rounded-corners {
     font-weight: lighter;
 }
 
+
+
+
+
+
+
+
+
+.uk-modal-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.like, .dislike {
+    border-style: none;
+    width: 100px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
 /* media query below */
 
 
