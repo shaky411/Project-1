@@ -247,11 +247,11 @@ $.get(SPOON_API + "recipes/random", function(data, status){
 
 
 // THIS CODE IS FOR THE LIKE/DISLIKE EMOJI
-let modals = modal[i]
+// let modals = modal[i]
 
-for(let i = 0; i < modals.length; i++) {
+// for(let i = 0; i < modals.length; i++) {
 
-}
+// }
 
 let likeBtn = document.querySelector("#like-counter");
 let clearLikeBtn = document.querySelector("#clear-buttons");
