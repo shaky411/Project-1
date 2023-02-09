@@ -36,6 +36,7 @@ Recipes Food app: https://shaky411.github.io/Project-1
 
 ## Usage
 
+Upon entering the site, the user is shown a menu and a search bar, by clicking and interacting with these buttons, the user is redirected to the appropriate page. The search bar feature allows users to type in a food, a range of nodals will appear below, dhowing a picture of the food and the associated recipe for it, on the 'recipes' button. The user can access this recipe and either choose a thumbs up or thumbs down emoji.
 
 ## Screenshots
 
@@ -49,4 +50,4 @@ N/A
 
 ## License
 
-Please refer to the license in the repo.
+MIT license
