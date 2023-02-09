@@ -246,7 +246,7 @@ $("#searchsubmit").on("click", function (event) {
 
 function getApiData(recipeName) {
     
-    fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${recipeName}&addRecipeInformation=true&number=${NumberOfRecipe}&apiKey=${}`)
+    fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${recipeName}&addRecipeInformation=true&number=${NumberOfRecipe}&apiKey=${marcApi}`)
     
     .then(response => response.json())
     .then(data =>  {

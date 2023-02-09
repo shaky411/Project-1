@@ -284,6 +284,59 @@ img.rounded-corners {
     text-align: center;
 }
 
+
+/* About Page */
+
+.social-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 140px;
+    
+    /* background-color: #002553; */
+    /* width: 300px; */
+}
+
+.content, .about-us, .social-links {
+    background-color: var(--jumbotron);
+    color: black;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.content {
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.4);
+    cursor: default;
+}
+
+.content a {
+    text-decoration: none;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    
+}
+
+.social-links i {
+    margin-right: 5px;
+    font-size: 50px;
+    text-decoration: none;
+}
+
+.social-links:hover {
+    color: #00FFC2;
+}
+
+.click-here {
+    cursor: pointer;
+}
 /* media query below */
 
 
