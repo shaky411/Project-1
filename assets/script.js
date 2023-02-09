@@ -217,6 +217,7 @@ let marcApi = "9576a7ab42504001b624812b6543e457"
 let OyeApi = "a932c80d4c7f4ff7a7be1a377cb8fce6"
 let robApi = "26f9309b69bd42e1af98887f1581f721"
 let marcNewApi = "9f001cee50b5401a8cfee3a040f6f6cc"
+let extraApi = "3ae081f84edc442d9668cad9fc23abe2"
 
 
 let searchBox = document.querySelector("#searchbox");
@@ -231,8 +232,13 @@ function launchButton() {
     }
 }
 
+
+
 $("#searchsubmit").on("click", function (event) {
     event.preventDefault();
+
+    let aboutCardEl = document.getElementById('about-card');
+    aboutCardEl.classList.add("hide");
 
     if (searchBox.value.trim() !== "") {
         let searchQuery = searchBox.value;
@@ -247,7 +253,7 @@ $("#searchsubmit").on("click", function (event) {
 
 function getApiData(recipeName) {
 
-    fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${recipeName}&addRecipeInformation=true&number=${NumberOfRecipe}&apiKey=${robApi}`)
+    fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${recipeName}&addRecipeInformation=true&number=${NumberOfRecipe}&apiKey=${extraApi}`)
 
         .then(response => response.json())
         .then(data => {
