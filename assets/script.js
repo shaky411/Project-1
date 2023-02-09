@@ -271,6 +271,9 @@ function getApiData(recipeName) {
                 let summary = recipe.summary;
                 console.log(summary);
 
+                let source = recipe.spoonacularSourceUrl;
+                console.log(source);
+
 
                 html += `
             <li>
@@ -316,7 +319,7 @@ function getApiData(recipeName) {
                         <p class="recipe-text">
                             ${summary}
                         </p>
-                        <a href="http://fullbellysisters.blogspot.com/2012/06/pasta-with-garlic-scallions-cauliflower.html"
+                        <a href="${source}"
                             target="_blank">read more<i class="fa-solid fa-angle-right"></i></a>
                     </div>
                 </div>
