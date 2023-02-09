@@ -4,10 +4,12 @@ let OyeApi = "a932c80d4c7f4ff7a7be1a377cb8fce6"
 let robApi = "26f9309b69bd42e1af98887f1581f721"
 let marcNewApi = "9f001cee50b5401a8cfee3a040f6f6cc"
 let extraApi = "3ae081f84edc442d9668cad9fc23abe2"
+let myApi = "0c95ff29cfcf4c4392aaef1efe6610e5"
 
 
 let searchBox = document.querySelector("#searchbox");
 let recipeSearch = [];
+
 let numberOfRecipe = 1;
 
 // This function handles events when the search button is clicked and also generates the specified number of results by pulling data from getAPIData function currently being called from within it
@@ -39,7 +41,9 @@ $("#searchsubmit").on("click", function (event) {
 
 function getApiData(recipeName) {
 
+
     fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${recipeName}&addRecipeInformation=true&number=${numberOfRecipe}&apiKey=${}`)
+
 
         .then(response => response.json())
         .then(data => {
@@ -145,8 +149,6 @@ function getApiData(recipeName) {
             }
 
         });
-
-
 
 };
 
