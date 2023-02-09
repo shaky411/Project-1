@@ -9,27 +9,11 @@
     --bodyDark: #282C34;
 }
 
-/* .card-container {
-    display: flex;
-    justify-content: space-around;
-} */
-
-/* .card-img-top { */
-    /* width: 100%;
-    aspect-ratio: 1;
-    /* background-size: contain; */ 
-    /* object-fit: cover;
-    width: 100%;
-    height: 250px;
-} */
 
 body {
     font-family: 'poppins', sans-serif !important;
 }
 
-/* .carousel-control-next, .carousel-control-prev {
-    width: 5%;
-} */
 
 /* UIKit style goes here */
 .uk-active {
@@ -256,14 +240,6 @@ img.rounded-corners {
     margin-top: 10px;
     font-weight: lighter;
 }
-
-
-
-
-
-
-
-
 
 .uk-modal-buttons {
     display: flex;
