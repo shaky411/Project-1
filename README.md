@@ -40,9 +40,11 @@ Upon entering the site, the user is shown a menu and a search bar, by clicking a
 
 ## Screenshots
 
-![Alt text](assets/screen%20capture/SCR-20230206-f8d.png)
+![Alt text](assets/screen%20capture/SC_001.png)
 
-![Alt text](assets/screen%20capture/SCR-20230206-f8p.png)
+![Alt text](assets/screen%20capture/SC_002.png)
+
+![Alt text](assets/screen%20capture/SC_003.png)
 
 ## Credits
 
