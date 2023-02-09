@@ -45,6 +45,7 @@ body {
     flex-direction: column;
     border-radius: 20px;
     background-color: #EDEDED;
+    box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.4);
 }
 
 .recipe-button {
