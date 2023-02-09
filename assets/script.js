@@ -218,61 +218,131 @@ let OyeApi = "a932c80d4c7f4ff7a7be1a377cb8fce6"
 let robApi = "26f9309b69bd42e1af98887f1581f721"
 
 
-function getApi() {
+let searchBox = document.querySelector("#searchbox");
+let recipeSearch = [];
+let NumberOfRecipe = 2;
 
-    let queryURL = "https://api.spoonacular.com/recipes/complexSearch?query=pasta&addRecipeInformation=true&number=2&apiKey=" + robApi;
+// This function handles events when the search button is clicked and also generates the specified number of results by pulling data from the getAPIData currently being called from within it
 
-    fetch(queryURL)
-        .then(response => response.json())
-        .then(function (response) {
-            let results = response.results;
-            console.log(results);
+function launchButton() {
+    for (let i = 0; i < recipeSearch.length; i++) {
+        const recipe = recipeSearch[i];
+    }
+}
 
-            for(let i = 0; i < results.length; i++) {
-                const result = results[i];
-                console.log(result);
-                
+$("#searchsubmit").on("click", function (event) {
+    event.preventDefault();
 
-                let title = result.title;
-                console.log("The title is: " + title);
-                console.log("=======================");
-                let summary = result.summary;
-                console.log("summary is: " + summary);
-                
-            }
+    if (searchBox.value.trim() !== "") {
+        let searchQuery = searchBox.value;
+        searchBox.value = "";
+        launchButton();
+        getApiData(searchQuery);
+
+        console.log(searchQuery);
+    };
+});
 
 
-            // stores results in local storage
-            // localStorage.setItem('results', JSON.stringify(results));
+function getApiData(recipeName) {
+    
+    fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${recipeName}&addRecipeInformation=true&number=${NumberOfRecipe}&apiKey=${}`)
+    
+    .then(response => response.json())
+    .then(data =>  {
+        
+        let recipes = data.results;
+        let html = "";
+        console.log(recipes);
 
-            // gets results from local storage and prints to the console
-            // console.log(localStorage.getItem('results'));
+           for (let i = 0; i < recipes.length; i++) {
+            let recipe = recipes[i];
 
+            let title = recipe.title;
+            console.log(title);
+
+            let imageURL = recipe.image;
+            console.log(imageURL);
+
+            let summary = recipe.summary;
+            console.log(summary);
             
-
-            // let modalTitle = document.getElementById('exampleModalLongTitle');
-            // let titleOne = document.createElement('h5');
-
-            // modalTitle.innerHTML = `
-            //     <h3>${foodTitle}</h3>
-            //     `
-
-            // titleOne.innerHTML = `
-            //     ${foodTitle}
-            // `
-
-
-            // cardOneTitle.append(titleOne);
-
-        })
+           }
+        });
 };
 
-getApi();
+getApiData();
 
-        
-        
 
-    
+
+
+// // This function handles events when the search button is clicked
+// $("searchsubmit").on("click", function (event){
+//     event.preventDefault();
+
+//     if (recipeInput.value.trim() == "") {
+//         let newRecipe =recipeInput.value;
+
+//     }
+// });
+
+
+
+// function getApi() {
+
+//     let queryURL = "https://api.spoonacular.com/recipes/complexSearch?query=pasta&addRecipeInformation=true&number=2&apiKey=" + oyeApi2;
+
+//     fetch(queryURL)
+//         .then(response => response.json())
+//         .then(function (response) {
+//             let results = response.results;
+//             console.log(results);
+
+//             for(let i = 0; i < results.length; i++) {
+//                 const result = results[i];
+//                 console.log(result);
+
+
+//                 let title = result.title;
+//                 console.log("The title is: " + title);
+//                 console.log("=======================");
+//                 let summary = result.summary;
+//                 console.log("summary is: " + summary);
+
+//             }
+
+
+//             // stores results in local storage
+//             // localStorage.setItem('results', JSON.stringify(results));
+
+//             // gets results from local storage and prints to the console
+//             // console.log(localStorage.getItem('results'));
+
+
+
+//             // let modalTitle = document.getElementById('exampleModalLongTitle');
+//             // let titleOne = document.createElement('h5');
+
+//             // modalTitle.innerHTML = `
+//             //     <h3>${foodTitle}</h3>
+//             //     `
+
+//             // titleOne.innerHTML = `
+//             //     ${foodTitle}
+//             // `
+
+
+//             // cardOneTitle.append(titleOne);
+
+//         })
+// };
+
+// getApi();
+
+
+
+
+
 
 
 
