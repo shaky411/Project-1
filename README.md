@@ -24,6 +24,7 @@
     * JQuery
     * Javascript
     * Spoonacular API: https://spoonacular.com/food-api
+    * Emoji API: https://emoji-api.com
 
 ## Installation
 
