@@ -288,6 +288,10 @@ img.rounded-corners {
 
 /* About Page */
 
+.copyright {
+    font-size: 12px;
+}
+
 .about-card {
     display: flex;
     flex-direction: column;
@@ -315,10 +319,12 @@ img.rounded-corners {
     text-decoration: none;
     color: #333333;
     margin-top: 50px;
+    transition: transform .8s ease-in-out;
 }
 
 .card-container a:hover {
     color: var(--navBar);
+    transform: rotate(360deg);
 }
 
 /* Social Page */
