@@ -20,7 +20,8 @@
 * We have used the following technologies to create our app:
 
     * CSS
-    • Tailwind CSS
+    * Bootstrap
+    * UIKit
     * JQuery
     * Javascript
     * Spoonacular API: https://spoonacular.com/food-api
@@ -28,7 +29,7 @@
 
 ## Installation
 
-To run the application, simply open the following link in your chosen web braowser.
+To run the application, simply open the following link in your chosen web browser.
 
 Enter a food type into the search bar, such as pizza! this will return 9 recipe info cards relating to your serach. Once your cards have been displayed, click on the recipes button for more detailed information such as the ingredients and cooking process. You can like/dislike the card for future reference.
 
@@ -36,7 +37,7 @@ Recipes Food app: https://shaky411.github.io/Project-1
 
 ## Usage
 
-Upon entering the site, the user is shown a menu and a search bar, by clicking and interacting with these buttons, the user is redirected to the appropriate page. The search bar feature allows users to type in a food, a range of nodals will appear below, dhowing a picture of the food and the associated recipe for it, on the 'recipes' button. The user can access this recipe and either choose a thumbs up or thumbs down emoji.
+Upon entering the site, the user is shown a menu and a search bar, by clicking and interacting with these buttons, the user is redirected to the appropriate page. The search bar feature allows users to type in a food, a range of cards will appear below, showing a picture of the food and the associated recipe for it, on the 'recipes' button. The user can access this recipe and either choose a thumbs up or thumbs down emoji.
 
 ## Screenshots
 
