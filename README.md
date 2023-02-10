@@ -41,7 +41,7 @@ Upon entering the site, the user is shown a menu and a search bar, by clicking a
 
 ## Screenshots
 
-![Alt text](assets/screen%20capture/SC_001.png)
+![Alt text](assets/screen%20capture/SC_Main.png)
 
 ![Alt text](assets/screen%20capture/SC_002.png)
 
