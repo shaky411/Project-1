@@ -10,7 +10,7 @@ let myApi = "0c95ff29cfcf4c4392aaef1efe6610e5"
 let searchBox = document.querySelector("#searchbox");
 let recipeSearch = [];
 
-let numberOfRecipe = 1;
+let numberOfRecipe = 2;
 
 // This function handles events when the search button is clicked and also generates the specified number of results by pulling data from getAPIData function currently being called from within it
 
@@ -98,7 +98,7 @@ function getApiData(recipeName) {
             <div class="modal-content">
                 <div class="modal-header" id="modal-header">
                     <h3 class="modal-title" id="exampleModalLongTitle">${title}</h3>
-                    <div id="emojiContainer" class="emoji-container">
+                    <div id="emojiContainer-${i}" class="emoji-container">
                         <!-- Emoji from API goes here -->
                     </div>
                 </div>
@@ -152,6 +152,9 @@ function getApiData(recipeName) {
 
 };
 
+
+// We were calling this function before which meant we were always calling the api.
+// I have moved this into the search submit function so its only called when we search for a recipe.
 // getApiData();
 
 
@@ -161,13 +164,14 @@ function emojiCode(index) {
     let clearLikeBtn = document.querySelector(`#clear-buttons-${index}`);
     let clearDislikeBtn = document.querySelector(`#clear-buttons-${index}`);
     let dislikeBtn = document.querySelector(`#dislike-counter-${index}`);
+    let emojiContainer = document.getElementById(`emojiContainer-${index}`);
 
     console.log(likeBtn, index)
     console.log(dislikeBtn, index)
 
     function likeDislike() {
 
-        let emojiContainer = document.getElementById('emojiContainer');
+        
 
         fetch("https://emoji-api.com/emojis?access_key=5715a029ed3fd2e22383b01663524c9319a127f7")
             .then(response => response.json())
