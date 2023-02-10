@@ -10,7 +10,7 @@ let myApi = "0c95ff29cfcf4c4392aaef1efe6610e5"
 let searchBox = document.querySelector("#searchbox");
 let recipeSearch = [];
 
-let numberOfRecipe = 2;
+let numberOfRecipe = 9;
 
 // This function handles events when the search button is clicked and also generates the specified number of results by pulling data from getAPIData function currently being called from within it
 
@@ -42,7 +42,7 @@ $("#searchsubmit").on("click", function (event) {
 function getApiData(recipeName) {
 
 
-    fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${recipeName}&addRecipeInformation=true&number=${numberOfRecipe}&apiKey=${marcApi}`)
+    fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${recipeName}&addRecipeInformation=true&number=${numberOfRecipe}&apiKey=${OyeApi}`)
 
 
         .then(response => response.json())
