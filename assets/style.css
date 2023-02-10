@@ -276,7 +276,7 @@ img.rounded-corners {
     width: 500px;
     border-radius: 10px;
     /* margin-top: 100px; */
-    box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.4);
 }
 
 .card-container i {
@@ -284,10 +284,10 @@ img.rounded-corners {
 }
 
 .card-container a {
-    font-size: 30px;
+    font-size: 40px;
     text-decoration: none;
     color: #333333;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     transition: transform .8s ease-in-out;
 }
 
@@ -333,7 +333,7 @@ img.rounded-corners {
 } */
 
 .git:hover {
-    color: #fff;
+    color: #1E96E8;
 }
 
 .face:hover {
