@@ -47,6 +47,8 @@ Upon entering the site, the user is shown a menu and a search bar, by clicking a
 
 ![Alt text](assets/screen%20capture/SC_003.png)
 
+![Alt text](assets/screen%20capture/Project_6.png)
+
 ## Credits
 
 N/A
